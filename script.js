@@ -1,15 +1,22 @@
 let score = 0;
-const wordList= ["FIREWALL", "MATRIX", "CYBER", "NEBULA", "STARSHIP", "ECLIPSE", "QUANTUM", "PHISHING", "MALWRE", "DATABASE", "STEALTH","AVATR"]
-<h2>TIME LEFT: <span id="timer">60</span>s</h2>
+const wordsList = ["BREACH", "OVERRIDE", "SIGNAL", "UPGRADE", "ACCESS", "BYPASS", "LAUNCH", "VECTOR", "TURBO", "STATIC"];
+
 const wordElement = document.getElementById("falling-word");
 const inputElement = document.getElementById("player-input");
 const scoreElement = document.getElementById("score");
-inputElement.addEventListener("input", () => {
- if (inputElement.value.toUpperCase() === wordElement.innerText) {
-    score = score + 10;
-    scoreElement.innerText = score;
-    inputElement.value = "";
-let randomNum = Math.floor(Math.random() * wordList.length;
-wordElement.innerText = wordList[randomNum];
- }
+
+// This function checks your typing automatically
+inputElement.addEventListener("input", function() {
+let typedText = inputElement.value.trim().toUpperCase();
+let targetText = wordElement.innerText.trim().toUpperCase();
+
+if (typedText === targetText) {
+score = score + 10;
+scoreElement.innerText = score;
+inputElement.value = ""; // Clears the box
+
+// Pick a random word
+let randomNum = Math.floor(Math.random() * wordsList.length);
+wordElement.innerText = wordsList[randomNum];
+}
 });
