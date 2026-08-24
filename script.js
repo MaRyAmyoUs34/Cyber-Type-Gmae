@@ -5,17 +5,17 @@ const wordElement = document.getElementById("falling-word");
 const inputElement = document.getElementById("player-input");
 const scoreElement = document.getElementById("score");
 
-// This function checks your typing automatically
 inputElement.addEventListener("input", function() {
+// This removes any hidden spaces or weird characters automatically!
 let typedText = inputElement.value.trim().toUpperCase();
-let targetText = wordElement.innerText.trim().toUpperCase();
+let targetText = wordElement.textContent.trim().toUpperCase();
 
 if (typedText === targetText) {
 score = score + 10;
 scoreElement.innerText = score;
-inputElement.value = ""; // Clears the box
+inputElement.value = ""; // Clear the typing box
 
-// Pick a random word
+// Pick a random word from the list
 let randomNum = Math.floor(Math.random() * wordsList.length);
 wordElement.innerText = wordsList[randomNum];
 }
