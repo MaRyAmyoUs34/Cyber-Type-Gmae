@@ -1,0 +1,33 @@
+body {
+    background-color: darkgrey;
+    color:darkcyan;
+    font-family: monospace;
+    text-align: center;
+    padding-top: 100px;
+}
+game-box {
+    background-color: darkgray;
+    border: 2px solid #00a8ad;
+    display: inline-block;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 168, 173, 0.15);
+}
+h1 {
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+input {
+background-color: #121824;
+border: 2px solid #00a8ad;
+color: #ffffff;
+padding: 10px;
+font-size: 20px;
+text-align: center;
+border-radius: 6px;
+}
+input:focus{
+    outline:none;
+    border-color: #00e5ee;
+    box-shadow: 0px opx 8px #00e5ee;
+}
